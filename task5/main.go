@@ -18,20 +18,20 @@ func main() {
 	go func(ch chan int) {
 		defer wg.Done()
 		for v := range ch {
-			fmt.Println(v)
+			fmt.Println(v) // читаем из канала
 		}
 	}(ch)
 
 	t := 5 * time.Second
 	for {
 		select {
-		case <-time.After(t):
+		case <-time.After(t): // если прошло 5 секунд то завершаем программу
 			fmt.Println("exit")
 			close(ch)
 			wg.Wait()
 			return
 		default:
-			ch <- rand.Intn(100)
+			ch <- rand.Intn(100) // если не прошло 5 секунд то отправляем значение в канал
 		}
 	}
 }

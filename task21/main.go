@@ -10,8 +10,7 @@ type Target interface {
 	Print()
 }
 
-type Adaptee struct {
-}
+type Adaptee struct{} //адаптируемый объект
 
 func (a *Adaptee) AdapteePrint() {
 	fmt.Println("TargetFunc")

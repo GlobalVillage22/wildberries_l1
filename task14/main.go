@@ -14,7 +14,7 @@ func main() {
 	var a interface{}
 	var ch chan int
 	a = ch
-	switch a.(type) {
+	switch a.(type) { // определяем тип переменной через switch
 	case int:
 		fmt.Println("int")
 	case string:
@@ -24,7 +24,7 @@ func main() {
 	case chan int:
 		fmt.Println("channel")
 	}
-	fmt.Println(reflect.TypeOf(a))
+	fmt.Println(reflect.TypeOf(a)) //определяем тип переменной через reflect
 	fmt.Println(reflect.ValueOf(a).Type())
 	fmt.Println(reflect.ValueOf(a).Kind())
 	fmt.Printf("%T\n", a)

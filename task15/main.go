@@ -24,18 +24,18 @@ func main() {
 var justString string
 
 func someFunc() {
-	v := createHugeString(1 << 10)
+	v := createHugeString(1 << 10) //создаем большую строку
 	var buf bytes.Buffer
-	buf.WriteString(v[:100])
-	justString = buf.String()
+	buf.WriteString(v[:100])  //заполняем буфер
+	justString = buf.String() //возвращаем строку
 }
 
-func createHugeString(size int) string {
-	var buf bytes.Buffer
+func createHugeString(size int) string { //функция создания большой строки
+	var buf bytes.Buffer //создаем буфер
 	for i := 0; i < size; i++ {
-		buf.WriteByte('a')
+		buf.WriteByte('a') //заполняем буфер
 	}
-	return buf.String()
+	return buf.String() //возвращаем строку
 }
 
 func main() {

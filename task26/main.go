@@ -15,13 +15,13 @@ aabcd — false
 */
 
 func unique(s string) bool {
-	s = strings.ToLower(s)
-	set := make(map[rune]struct{})
+	s = strings.ToLower(s)         // приводим к нижнему регистру
+	set := make(map[rune]struct{}) // создаем мапу символов
 	for _, r := range s {
 		if _, ok := set[r]; ok {
-			return false
+			return false // если символ уже есть в мапе, то возвращаем false
 		}
-		set[r] = struct{}{}
+		set[r] = struct{}{} // если нет, то добавляем
 	}
 	return true
 }

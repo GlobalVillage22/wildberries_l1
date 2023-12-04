@@ -33,7 +33,7 @@ func main() {
 	go func() {
 		defer wg.Done()
 		for n := range ch2 {
-			fmt.Print(n, " ")
+			fmt.Print(n, " ") // читаем из канала ch2 и выводим в stdout
 		}
 	}()
 
